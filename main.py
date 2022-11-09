@@ -66,7 +66,7 @@ def simulate_views(I1, I2, t1, t2, ts, img_f):
 
 if __name__ == '__main__':
     # load input
-    img_f = '4'
+    img_f = '5'
     # original_img = np.asarray(Image.open('./data/' + img_f + '.jpg'))
     # oh, ow, chs = original_img.shape
 
@@ -74,8 +74,8 @@ if __name__ == '__main__':
     # save cropped images
     # I1 = original_img[:, :ow * 2 // 3, :]
     # I2 = original_img[:, ow // 3:, :]
-    I1 = np.asarray(Image.open('./test_pic/2-I1.jpg'))
-    I2 = np.asarray(Image.open('./test_pic/2-I2.jpg'))
+    I1 = np.asarray(Image.open('./test_pic/3-i1.jpg'))
+    I2 = np.asarray(Image.open('./test_pic/3-i2.jpg'))
     PI1 = Image.fromarray(I1)
     PI2 = Image.fromarray(I2)
     PI1.save('./out/' + img_f + '-I1.jpg')
@@ -84,7 +84,7 @@ if __name__ == '__main__':
     # simulate theta generated image at 10 locations
     theta_1 = 0
     # theta_2 = math.pi / 180 * 29.225
-    theta_2 = math.pi / 180 * 25
+    theta_2 = math.pi / 180 * 10
     thetas = np.arange(theta_1, theta_2+1e-5, (theta_2 - theta_1) / 20)
     simulate_views(I2, I1, theta_1, theta_2, thetas, img_f)
 
